@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import { faqs } from '@/data/faqs';
+import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -54,7 +55,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="https://wa.me/971XXXXXXXXX"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"

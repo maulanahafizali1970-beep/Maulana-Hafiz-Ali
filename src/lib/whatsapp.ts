@@ -1,5 +1,5 @@
 // WhatsApp configuration - update the number here to change globally
-export const WHATSAPP_NUMBER = '971XXXXXXXXX';
+export const WHATSAPP_NUMBER = '917678293353';
 
 export function getWhatsAppUrl(message?: string, number?: string): string {
   const phone = number || WHATSAPP_NUMBER;

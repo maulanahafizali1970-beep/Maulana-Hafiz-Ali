@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from 'lucide-react';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
+import { getWhatsAppUrl, WHATSAPP_NUMBER } from '@/lib/whatsapp';
 
 interface WhatsAppButtonProps {
   message?: string;
@@ -20,7 +20,7 @@ export default function WhatsAppButton({ message }: WhatsAppButtonProps) {
         <MessageCircle className="w-7 h-7 text-white" />
       </a>
       <a
-        href="tel:+971XXXXXXXXX"
+        href={`tel:+${WHATSAPP_NUMBER}`}
         className="w-10 h-10 rounded-full bg-subtle-gold hover:bg-subtle-gold/80 shadow-md flex items-center justify-center transition-colors"
         aria-label="Call for consultation"
       >

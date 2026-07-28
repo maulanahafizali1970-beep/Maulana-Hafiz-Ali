@@ -1,4 +1,5 @@
 import { MessageCircle, Phone, Mail } from 'lucide-react';
+import { getWhatsAppUrl, WHATSAPP_NUMBER } from '@/lib/whatsapp';
 
 interface CTASectionProps {
   heading: string;
@@ -20,7 +21,7 @@ export default function CTASection({ heading, text, availability }: CTASectionPr
         <p className="text-white/80 leading-relaxed">{text}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
           <a
-            href="https://wa.me/971XXXXXXXXX"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-deep-emerald rounded-lg hover:bg-soft-cream transition-colors font-medium text-sm"
@@ -29,7 +30,7 @@ export default function CTASection({ heading, text, availability }: CTASectionPr
             WhatsApp Now
           </a>
           <a
-            href="tel:+971XXXXXXXXX"
+            href={`tel:+${WHATSAPP_NUMBER}`}
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white rounded-lg hover:bg-white/10 transition-colors font-medium text-sm"
           >
             <Phone className="w-5 h-5" />

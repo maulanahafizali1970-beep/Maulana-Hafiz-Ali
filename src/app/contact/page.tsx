@@ -49,7 +49,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="text-subtle-gold hover:text-deep-emerald text-sm transition-colors"
               >
-                +971 XX XXX XXXX
+                +91 76782 93353
               </a>
               <p className="text-dark-text/50 text-xs mt-2">Available during consultation hours</p>
             </div>
@@ -60,10 +60,10 @@ export default function ContactPage() {
               </div>
               <h3 className="font-bold text-dark-forest mb-2">Phone</h3>
               <a
-                href="tel:+971XXXXXXXXX"
+                href="tel:+917678293353"
                 className="text-subtle-gold hover:text-deep-emerald text-sm transition-colors"
               >
-                +971 XX XXX XXXX
+                +91 76782 93353
               </a>
               <p className="text-dark-text/50 text-xs mt-2">Available during consultation hours</p>
             </div>
