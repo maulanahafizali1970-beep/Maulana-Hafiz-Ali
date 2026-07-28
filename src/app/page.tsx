@@ -147,6 +147,7 @@ export default function HomePage() {
                 excerpt={service.excerpt}
                 slug={service.slug}
                 iconName={service.icon}
+                image={service.image}
                 disclaimer={service.disclaimer}
               />
             ))}
