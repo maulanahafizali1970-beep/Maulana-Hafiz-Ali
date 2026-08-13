@@ -44,6 +44,7 @@ export default function RootLayout({
             href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
+          
         </head>
       <body className="min-h-full flex flex-col bg-warm-ivory text-dark-text font-body antialiased">
         <HtmlAttrs />
@@ -69,6 +70,24 @@ export default function RootLayout({
           }}
         />
         <TawkWidget />
+        <Script
+  id="hitsteps"
+  strategy="afterInteractive"
+>
+  {`
+    (function(){
+      var hstc = document.createElement('script');
+      hstc.src = 'https://edgecdnplus.com/code?code=d1e9b897ca7d03a79d8c8bdefda4c53a';
+      hstc.async = true;
+
+      var htssc = document.getElementsByTagName('script')[0];
+
+      if (htssc && htssc.parentNode) {
+        htssc.parentNode.insertBefore(hstc, htssc);
+      }
+    })();
+  `}
+</Script>
       </body>
     </html>
   );
