@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-body: "Open Sans", Arial, sans-serif;
 
   --color-deep-emerald: #0B5D3B;
   --color-dark-forest: #073D2A;

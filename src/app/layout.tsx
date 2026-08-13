@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactFormSection from "@/components/ContactFormSection";
 import HtmlAttrs from "@/components/HtmlAttrs";
-
-const merriweather = Merriweather({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-});
-
-const openSans = Open_Sans({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Maulana Hafiz Ali | Islamic Love, Marriage & Spiritual Guidance",
@@ -49,11 +36,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html
-        className={`${merriweather.variable} ${openSans.variable} h-full`}
-      >
+      <html className="h-full">
         <head>
           <meta name="theme-color" content="#0B5D3B" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
         </head>
       <body className="min-h-full flex flex-col bg-warm-ivory text-dark-text font-body antialiased">
         <HtmlAttrs />
