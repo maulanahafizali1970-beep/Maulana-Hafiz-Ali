@@ -1,0 +1,213 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  AGENT
+}
+
+enum LeadPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model User {
+  id           String   @id @default(cuid())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         Role     @default(AGENT)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  leadsAssigned       LeadAssignment[]
+  notes               LeadNote[]
+  followups           LeadFollowup[]
+  statusHistories     LeadStatusHistory[]
+  activityLogs        ActivityLog[]
+  notifications       Notification[]
+  assignedLeads       Lead[]          @relation("LeadAssignee")
+}
+
+model LeadStatus {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  color     String   @default("#64748b")
+  sortOrder Int      @default(0)
+  isDefault Boolean  @default(false)
+  isSystem  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  leads    Lead[]
+  histories LeadStatusHistory[] @relation("HistoryToStatus")
+  historyFrom LeadStatusHistory[] @relation("HistoryFromStatus")
+}
+
+model Lead {
+  id           String        @id @default(cuid())
+  leadNo       Int           @unique @default(autoincrement())
+  name         String
+  phone        String
+  email        String?
+  country      String?
+  city         String?
+  message      String?
+  sourcePage   String?
+  formName     String?
+  utmSource    String?
+  utmMedium    String?
+  utmCampaign  String?
+  utmTerm      String?
+  utmContent   String?
+  ipAddress    String?
+  deviceInfo   String?
+  browserInfo  String?
+  priority     LeadPriority  @default(MEDIUM)
+  customFields Json?
+  deletedAt    DateTime?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  statusId      String?
+  status        LeadStatus?          @relation(fields: [statusId], references: [id])
+  assignedToId  String?
+  assignedTo    User?                @relation("LeadAssignee", fields: [assignedToId], references: [id])
+  assignments   LeadAssignment[]
+  notes         LeadNote[]
+  followups     LeadFollowup[]
+  tags          LeadTag[]
+  histories     LeadStatusHistory[]
+  activityLogs  ActivityLog[]
+  notifications Notification[]
+
+  @@index([phone])
+  @@index([email])
+  @@index([statusId])
+  @@index([assignedToId])
+  @@index([createdAt])
+  @@index([deletedAt])
+}
+
+model LeadAssignment {
+  id         String   @id @default(cuid())
+  leadId     String
+  lead       Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  assignedBy String?
+  note       String?
+  createdAt  DateTime @default(now())
+
+  @@index([leadId])
+  @@index([userId])
+}
+
+model LeadNote {
+  id        String   @id @default(cuid())
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  kind      String   @default("note") // note | call_note | email | whatsapp
+  content   String
+  createdAt DateTime @default(now())
+
+  @@index([leadId])
+}
+
+model LeadFollowup {
+  id          String    @id @default(cuid())
+  leadId      String
+  lead        Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  userId      String?
+  user        User?     @relation(fields: [userId], references: [id])
+  dueAt       DateTime
+  note        String?
+  completed   Boolean   @default(false)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+
+  @@index([leadId])
+  @@index([dueAt])
+  @@index([completed])
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  color     String   @default("#64748b")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  leads LeadTag[]
+}
+
+model LeadTag {
+  leadId String
+  tagId  String
+  lead   Lead  @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  tag    Tag   @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@id([leadId, tagId])
+  @@index([tagId])
+}
+
+model LeadStatusHistory {
+  id           String   @id @default(cuid())
+  leadId       String
+  lead         Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  fromStatusId String?
+  toStatusId   String?
+  fromStatus   LeadStatus? @relation("HistoryFromStatus", fields: [fromStatusId], references: [id])
+  toStatus     LeadStatus? @relation("HistoryToStatus", fields: [toStatusId], references: [id])
+  changedById  String?
+  changedBy    User?    @relation(fields: [changedById], references: [id])
+  note         String?
+  createdAt    DateTime @default(now())
+
+  @@index([leadId])
+}
+
+model ActivityLog {
+  id         String    @id @default(cuid())
+  userId     String?
+  user       User?     @relation(fields: [userId], references: [id])
+  leadId     String?
+  lead       Lead?     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  action     String
+  details    String?
+  ipAddress  String?
+  createdAt  DateTime  @default(now())
+
+  @@index([leadId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  leadId    String?
+  lead      Lead?    @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  type      String   // new_lead | assignment | followup | system
+  title     String
+  message   String?
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([read])
+}

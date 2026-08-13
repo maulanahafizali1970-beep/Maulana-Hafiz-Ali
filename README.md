@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maulana Hafiz Ali
+
+Islamic consultation website built with Next.js 16 (App Router), Tailwind CSS v4, and Supabase (PostgreSQL) via Prisma. Includes a full CRM-style **Lead Management Admin Panel** at `/admin`.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env` and fill in your values:
+
+| Variable | Description |
+| --- | --- |
+| `DATABASE_URL` | Supabase PostgreSQL pooler connection string (port `6543`, `sslmode=require`) |
+| `JWT_SECRET` | Long random string used to sign admin session cookies (`openssl rand -base64 32`) |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Admin bootstrap account used by the seed script |
+| `WEB3FORMS_ACCESS_KEY` | Optional web3forms key (email fallback on form submission) |
+
+## Database Setup (Prisma 7)
+
+Prisma 7 uses `prisma.config.ts`; the client is generated into `src/generated/prisma` and connects through the `@prisma/adapter-pg` driver adapter.
+
+```bash
+# Generate the client
+npx prisma generate
+
+# Apply existing migrations to the database
+npx prisma migrate deploy
+
+# Seed statuses, tags, admin user, and sample leads
+npx tsx prisma/seed.ts
+```
+
+> Note: `prisma migrate dev` does not work against the Supabase pooler ("bouncer config error").
+> For schema changes, generate SQL with `prisma migrate diff` and apply it with `prisma migrate deploy`.
+
+## Admin Panel
+
+- URL: `/admin` (redirects to `/admin/login` when unauthenticated)
+- Default admin (from seed): `admin@maulanahafizali.com` / `ChangeMe123!` — **change both before going live**
+- Features: lead list (search, filters, sort, pagination, bulk actions), lead detail (notes, follow-ups, tags, status history, Call/WhatsApp/Imo/Email), status management, team management, tag management, trash/restore, CSV export, CSV/XLSX import, dashboard with trends, notifications.
+- Roles: `ADMIN`, `MANAGER`, `AGENT`.
+
+## Deployment (Vercel)
+
+Push to `main`; Vercel auto-deploys. Set all `.env` values in the Vercel project settings (env variables), then run `npx prisma migrate deploy` once against the production database (e.g. in a local terminal — the pooler does not support `migrate dev`).
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Prisma Documentation](https://www.prisma.io/docs)
+- [Supabase Documentation](https://supabase.com/docs)
