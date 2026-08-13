@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ContactFormSection from "@/components/ContactFormSection";
+import SiteChrome from "@/components/SiteChrome";
 import HtmlAttrs from "@/components/HtmlAttrs";
 import TawkWidget from "@/components/TawkWidget";
 
@@ -49,10 +47,7 @@ export default function RootLayout({
         </head>
       <body className="min-h-full flex flex-col bg-warm-ivory text-dark-text font-body antialiased">
         <HtmlAttrs />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <ContactFormSection />
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
 
         <script
           type="application/ld+json"
