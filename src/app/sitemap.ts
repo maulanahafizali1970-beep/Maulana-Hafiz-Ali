@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { services } from '@/data/services';
 import { blogPosts } from '@/data/blog';
 
-const siteUrl = 'https://www.maulanahafizali.com';
+const siteUrl = 'https://maulana-hafiz-ali.vercel.app';
 
 const staticPages = [
   { url: '', priority: 1.0 },
@@ -16,6 +16,7 @@ const staticPages = [
   { url: '/privacy-policy', priority: 0.3 },
   { url: '/terms-conditions', priority: 0.3 },
   { url: '/disclaimer', priority: 0.3 },
+  { url: '/ar', priority: 0.8 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,5 +1,4 @@
-import { MessageCircle, Phone, Mail } from 'lucide-react';
-import { getWhatsAppUrl, WHATSAPP_NUMBER } from '@/lib/whatsapp';
+import Link from 'next/link';
 
 interface CTASectionProps {
   heading: string;
@@ -20,29 +19,18 @@ export default function CTASection({ heading, text, availability }: CTASectionPr
         <h2 className="text-3xl md:text-4xl font-bold text-white">{heading}</h2>
         <p className="text-white/80 leading-relaxed">{text}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="#contact-form"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-deep-emerald rounded-lg hover:bg-soft-cream transition-colors font-medium text-sm"
           >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp Now
-          </a>
-          <a
-            href={`tel:+${WHATSAPP_NUMBER}`}
+            Submit Your Details
+          </Link>
+          <Link
+            href="/services"
             className="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white rounded-lg hover:bg-white/10 transition-colors font-medium text-sm"
           >
-            <Phone className="w-5 h-5" />
-            Request a Call
-          </a>
-          <a
-            href="mailto:contact@maulanahafizali.com"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-white/40 text-white rounded-lg hover:bg-white/10 transition-colors font-medium text-sm"
-          >
-            <Mail className="w-5 h-5" />
-            Send a Message
-          </a>
+            View All Services
+          </Link>
         </div>
         <p className="text-white/60 text-sm">{availability}</p>
       </div>

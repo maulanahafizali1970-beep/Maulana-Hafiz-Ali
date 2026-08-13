@@ -3,21 +3,33 @@ import { NavigationItem } from '@/types';
 export const navigation: NavigationItem[] = [
   { label: 'Home', labelAr: 'الرئيسية', href: '/' },
   { label: 'About', labelAr: 'عن الشيخ', href: '/about' },
-  { label: 'Services', labelAr: 'الخدمات', href: '/services' },
-  { label: 'Love Problems', labelAr: 'مشاكل الحب', href: '/love-problem-guidance' },
-  { label: 'Marriage Guidance', labelAr: 'إرشاد زواجي', href: '/marriage-family-approval' },
+  {
+    label: 'Services',
+    labelAr: 'الخدمات',
+    href: '/services',
+    children: [
+      { label: 'Wazifa', labelAr: 'وظيفة', href: '/wazifa' },
+      { label: 'Vashikaran', labelAr: 'فاشيكران', href: '/vashikaran' },
+      { label: 'Court Case Solutions', labelAr: 'حلول القضايا القانونية', href: '/court-case-solutions' },
+      { label: 'Business Obstacles', labelAr: 'عوائق الأعمال', href: '/business-obstacles' },
+      { label: 'Jobs and Children Problems', labelAr: 'مشاكل العمل والأبناء', href: '/jobs-child-problems' },
+      { label: 'Family Dispute Resolution', labelAr: 'حل النزاعات العائلية', href: '/family-dispute-resolution' },
+    ],
+  },
   { label: 'Testimonials', labelAr: 'تجارب العملاء', href: '/testimonials' },
   { label: 'Blog', labelAr: 'المقالات', href: '/blog' },
   { label: 'Contact', labelAr: 'اتصل بنا', href: '/contact' },
 ];
 
 export const footerServices: NavigationItem[] = [
-  { label: 'Love Problem Guidance', labelAr: 'إرشاد مشاكل الحب', href: '/love-problem-guidance' },
-  { label: 'Lost Love and Reconciliation', labelAr: 'الحب المفقود والمصالحة', href: '/lost-love-reconciliation' },
-  { label: 'Husband and Wife Problems', labelAr: 'مشاكل الزوجين', href: '/husband-wife-problems' },
-  { label: 'Marriage and Family Approval', labelAr: 'الزواج وموافقة الأسرة', href: '/marriage-family-approval' },
-  { label: 'Separation and Divorce Guidance', labelAr: 'إرشاد الانفصال والطلاق', href: '/separation-divorce-guidance' },
-  { label: 'Spiritual Protection', labelAr: 'الحماية الروحية', href: '/evil-eye-spiritual-protection' },
+  { label: 'Wazifa', labelAr: 'وظيفة', href: '/wazifa' },
+  { label: 'Vashikaran', labelAr: 'فاشيكران', href: '/vashikaran' },
+  { label: 'Court Case Solutions', labelAr: 'حلول القضايا القانونية', href: '/court-case-solutions' },
+  { label: 'Buried Wealth', labelAr: 'الكنوز المدفونة', href: '/buried-wealth' },
+  { label: 'Business Obstacles', labelAr: 'عوائق الأعمال', href: '/business-obstacles' },
+  { label: 'Jobs and Children Problems', labelAr: 'مشاكل العمل والأبناء', href: '/jobs-child-problems' },
+  { label: 'Freedom from Enemies', labelAr: 'التخلص من الأعداء', href: '/freedom-from-enemies' },
+  { label: 'Family Dispute Resolution', labelAr: 'حل النزاعات العائلية', href: '/family-dispute-resolution' },
 ];
 
 export const footerLinks: NavigationItem[] = [

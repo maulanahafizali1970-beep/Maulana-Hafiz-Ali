@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Heart, HeartHandshake, Users, Home, HeartOff, Shield, MessageCircle, Phone, CheckCircle, ChevronLeft } from 'lucide-react';
+import { Heart, HeartHandshake, Users, Home, HeartOff, Shield, Scale, Sparkles, Coins, Briefcase, ShieldAlert, CheckCircle, ChevronLeft, PhoneCall, BookOpen } from 'lucide-react';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
 import { faqs } from '@/data/faqs';
@@ -14,55 +14,57 @@ import TestimonialCard from '@/components/TestimonialCard';
 import BlogCard from '@/components/BlogCard';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
-import { getWhatsAppUrl, getServiceMessage } from '@/lib/whatsapp';
 
 const quickServices = [
-  { title: 'Love Problem Guidance', slug: '/love-problem-guidance', icon: Heart },
-  { title: 'Lost Love and Reconciliation', slug: '/lost-love-reconciliation', icon: HeartHandshake },
-  { title: 'Husband and Wife Problems', slug: '/husband-wife-problems', icon: Users },
-  { title: 'Marriage and Family Approval', slug: '/marriage-family-approval', icon: Home },
-  { title: 'Separation Guidance', slug: '/separation-divorce-guidance', icon: HeartOff },
-  { title: 'Spiritual Protection', slug: '/evil-eye-spiritual-protection', icon: Shield },
+  { title: 'Wazifa', slug: '/wazifa', icon: Heart },
+  { title: 'Vashikaran', slug: '/vashikaran', icon: Sparkles },
+  { title: 'Court Case Solutions', slug: '/court-case-solutions', icon: Scale },
+  { title: 'Buried Wealth', slug: '/buried-wealth', icon: Coins },
+  { title: 'Business Obstacles', slug: '/business-obstacles', icon: Briefcase },
+  { title: 'Jobs and Children Problems', slug: '/jobs-child-problems', icon: Briefcase },
 ];
 
 const trustItems = [
   { title: 'Confidential Consultation', description: 'Your privacy is respected. All discussions remain completely confidential.', icon: Shield },
-  { title: 'Personalized Guidance', description: 'Every situation is unique. Guidance is tailored to your specific circumstances.', icon: MessageCircle },
-  { title: 'Arabic & English Support', description: 'Consultations available in both Arabic and English for your convenience.', icon: Heart },
-  { title: 'Worldwide Online Service', description: 'Connect from anywhere in the world through WhatsApp, phone or online form.', icon: Users },
+  { title: 'Personalized Guidance', description: 'Every situation is unique. Guidance is tailored to your specific circumstances.', icon: Heart },
+  { title: 'Arabic & English Support', description: 'Consultations available in both Arabic and English for your convenience.', icon: Users },
+  { title: 'Worldwide Online Service', description: 'Get work done from any corner of the world — find a solution for every problem.', icon: Home },
 ];
 
 const problemsList = [
+  'Court cases and legal disputes',
+  'Vashikaran-related concerns',
+  'Buried wealth and hidden treasure',
+  'Domestic peace and family stability',
+  'Business obstacles and growth',
+  'Jobs and career difficulties',
+  'Children problems',
+  'Freedom from enemies and protection',
+  'Family dispute resolution',
+  'Property and inheritance disputes',
   'Misunderstandings between partners',
-  'Breakup and loss of communication',
   'Husband-wife disagreements',
   'Family opposition to marriage',
-  'Trust and jealousy concerns',
-  'Emotional distance',
-  'Intercultural marriage difficulties',
-  'Delayed marriage discussions',
   'Separation and divorce concerns',
-  'One-sided attachment',
-  'Family conflict',
-  'Fear of envy or evil eye',
+  'Trust and jealousy concerns',
   'Emotional healing after rejection',
-  'Decision-making before marriage',
+  'Fear of envy or evil eye',
   'Long-distance relationship difficulties',
 ];
 
 const whyChoosePoints = [
-  'Confidential and respectful communication',
-  'Guidance based on each person\'s circumstances',
-  'Arabic and English consultation',
-  'Convenient WhatsApp and phone support',
-  'Combination of spiritual reflection and practical advice',
+  'Only you will get the solution to your problems over a phone call',
+  'Get work done from any corner of the world',
+  'A problem of any kind is rooted out in just three hours',
+  'Disappointed from Tantriks? Try once for sure',
+  'Confidential, respectful and personalized guidance',
 ];
 
 const consultationSteps = [
-  { title: 'Share Your Situation', description: 'Complete the form or send a private WhatsApp message.' },
+  { title: 'Submit Your Details', description: 'Fill out the contact details form on this page.' },
   { title: 'Choose Your Language', description: 'Select English or Arabic for your consultation.' },
-  { title: 'Receive Personalized Guidance', description: 'Your situation will be reviewed privately before guidance is provided.' },
-  { title: 'Take Practical and Spiritual Steps', description: 'Follow respectful recommendations based on your circumstances.' },
+  { title: 'Receive a Call', description: 'You will be contacted over a phone call to understand your problem.' },
+  { title: 'Get Your Solution', description: 'A problem of any kind is rooted out in just three hours.' },
 ];
 
 export default function HomePage() {
@@ -95,10 +97,106 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Key Promises Banner */}
+      <section className="bg-deep-emerald py-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-6 text-center">
+            {[
+              { title: 'Solution Over a Phone Call', description: 'Only you will get the solution to your problems over a phone call' },
+              { title: 'From Any Corner of the World', description: 'Get work done from any corner of the world — find a solution for every problem' },
+              { title: 'Just Three Hours', description: 'A problem of any kind is rooted out in just three hours' },
+              { title: 'Disappointed from Tantriks?', description: 'Try once for sure — share your problem and get guidance' },
+            ].map((promise) => (
+              <div key={promise.title} className="p-4 border border-[#C5A253]/30 rounded-lg bg-[#0B5D3B]">
+                <h3 className="text-[#C5A253] font-bold mb-2">{promise.title}</h3>
+                <p className="text-white/80 text-sm">{promise.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Wazifa Highlight */}
+      <section className="relative bg-deep-emerald overflow-hidden py-16">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,0.06) 15px, rgba(255,255,255,0.06) 30px)`,
+          }}
+        />
+        <div className="relative z-10 max-w-5xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-5">
+              <span className="inline-block bg-subtle-gold text-dark-forest font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full">
+                ★ Most Trusted Service
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                Wazifa — The Power of Sacred Prayer for Your Every Problem
+              </h2>
+              <p className="text-white/80 leading-relaxed">
+                Wazifa is our most requested service. Through sacred prayers and dua, guidance is
+                provided for every kind of difficulty — court cases, business obstacles, family
+                disputes, relationship problems and more. Only you will get the solution to your
+                problems over a phone call.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  'A problem of any kind is rooted out in just three hours',
+                  'Get work done from any corner of the world',
+                  'Disappointed from Tantriks? Try once for sure',
+                  'Confidential guidance in English and Arabic',
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-white/80">
+                    <svg className="w-5 h-5 text-subtle-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link
+                  href="/wazifa"
+                  className="inline-flex items-center gap-2 bg-subtle-gold hover:bg-amber-600 text-dark-forest px-6 py-3 rounded-lg font-bold transition-colors"
+                >
+                  Learn About Wazifa
+                </Link>
+                <Link
+                  href="#contact-form"
+                  className="inline-flex items-center gap-2 border-2 border-white/50 text-white hover:bg-white/10 px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  Submit Your Details
+                </Link>
+              </div>
+            </div>
+            <div className="space-y-5">
+              <div className="bg-[#0B5D3B] border border-subtle-gold/40 rounded-2xl p-8 text-center shadow-xl">
+                <div className="w-20 h-20 mx-auto rounded-full bg-subtle-gold/15 flex items-center justify-center mb-5">
+                  <BookOpen className="w-10 h-10 text-subtle-gold" />
+                </div>
+                <h3 className="text-subtle-gold font-bold text-xl mb-3">Wazifa Consultation</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Share your problem and receive personalized wazifa guidance over a confidential
+                  phone call — a solution rooted out in just three hours.
+                </p>
+                <div className="mt-6">
+                  <Link
+                    href="/wazifa"
+                    className="inline-flex items-center justify-center w-full bg-white text-deep-emerald hover:bg-soft-cream px-6 py-3 rounded-lg font-bold transition-colors"
+                  >
+                    Start Your Wazifa
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <AboutSection
         heading="Meet Maulana Hafiz Ali"
-        content="Maulana Hafiz Ali offers confidential spiritual and relationship guidance to individuals and families experiencing difficult circumstances. His consultations focus on faith, patience, emotional understanding, respectful communication and practical steps toward reconciliation. Every situation is treated privately and individually. The purpose of the consultation is not to control another person, but to help clients understand their circumstances, seek a lawful path and make thoughtful decisions for their future."
+        content="Maulana Hafiz Ali offers confidential spiritual guidance to individuals and families experiencing difficult circumstances. His consultations focus on faith, patience, emotional understanding, respectful communication and practical steps toward a solution. Every situation is treated privately and individually. Only you will get the solution to your problems over a phone call."
         points={[
           'Confidential one-to-one consultation',
           'Guidance available in English and Arabic',
@@ -133,10 +231,10 @@ export default function HomePage() {
       <section className="bg-warm-ivory py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-dark-forest text-center mb-4">
-            Guidance for Love, Marriage and Personal Problems
+            Guidance for Every Kind of Problem
           </h2>
           <p className="text-dark-text/70 text-center max-w-2xl mx-auto mb-10">
-            Confidential support for a wide range of relationship and personal concerns
+            A problem of any kind is rooted out in just three hours
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service) => (
@@ -149,6 +247,7 @@ export default function HomePage() {
                 iconName={service.icon}
                 image={service.image}
                 disclaimer={service.disclaimer}
+                featured={service.featured}
               />
             ))}
           </div>
@@ -202,21 +301,18 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4 mt-8 justify-center">
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="#contact-form"
                 className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                <MessageCircle className="w-5 h-5" />
-                Talk Privately on WhatsApp
-              </a>
+                <PhoneCall className="w-5 h-5" />
+                Submit Your Details
+              </Link>
               <Link
-                href="/contact"
+                href="/services"
                 className="inline-flex items-center gap-2 border-2 border-deep-emerald text-deep-emerald hover:bg-deep-emerald hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                <Phone className="w-5 h-5" />
-                Request a Consultation
+                View All Services
               </Link>
             </div>
           </div>
@@ -284,12 +380,12 @@ export default function HomePage() {
             Serving clients across the Middle East, Asia, Europe, North America and beyond
           </p>
           <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-            {countries.slice(0, 15).map((country) => (
+            {countries.slice(0, 15).map((country, i) => (
               <div
                 key={country.id}
                 className="flex flex-col items-center gap-2 p-3 border border-light-border rounded-lg bg-white hover:border-subtle-gold transition-colors"
               >
-                <span className="text-2xl">{country.flag}</span>
+                <span className={`text-2xl flag-wave flag-delay-${(i % 5) + 1}`}>{country.flag}</span>
                 <span className="text-xs md:text-sm text-dark-text text-center font-medium">{country.name}</span>
               </div>
             ))}
@@ -385,7 +481,7 @@ export default function HomePage() {
       {/* CTA */}
       <CTASection
         heading="Discuss Your Situation Privately"
-        text="Speak with Maulana Hafiz Ali about your relationship, marriage, family or spiritual concerns through a confidential online consultation."
+        text="Only you will get the solution to your problems over a phone call. Submit your details and be contacted from any corner of the world."
         availability="Arabic and English consultations available."
       />
     </>

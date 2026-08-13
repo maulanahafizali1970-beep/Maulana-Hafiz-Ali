@@ -46,3 +46,21 @@ h1, h2, h3, h4, h5 {
   outline: 2px solid #C5A253;
   outline-offset: 2px;
 }
+
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+.flag-wave {
+  display: inline-block;
+  animation: flag-wave 1.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.flag-delay-1 { animation-delay: 0s; }
+.flag-delay-2 { animation-delay: 0.1s; }
+.flag-delay-3 { animation-delay: 0.2s; }
+.flag-delay-4 { animation-delay: 0.3s; }
+.flag-delay-5 { animation-delay: 0.4s; }

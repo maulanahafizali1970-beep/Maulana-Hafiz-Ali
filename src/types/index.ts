@@ -10,6 +10,7 @@ export interface Service {
   icon: string;
   image: string;
   isSpecial?: boolean;
+  featured?: boolean;
   disclaimer?: string;
   disclaimerAr?: string;
 }

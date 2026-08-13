@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MessageCircle, ArrowLeft, User, Calendar } from 'lucide-react';
+import { ArrowLeft, User, Calendar } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import BlogCard from '@/components/BlogCard';
 import { blogPosts } from '@/data/blog';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -178,15 +177,12 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           <div className="flex justify-center mt-8">
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="#contact-form"
               className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
-              <MessageCircle className="w-5 h-5" />
-              Discuss Your Situation on WhatsApp
-            </a>
+              Submit Your Details
+            </Link>
           </div>
         </div>
       </article>

@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
                 <li>Full name</li>
                 <li>Email address</li>
                 <li>Country of residence</li>
-                <li>WhatsApp or phone number</li>
+                <li>Phone number</li>
                 <li>Preferred language</li>
                 <li>Service required</li>
                 <li>Message or description of your situation</li>
@@ -106,8 +106,8 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-bold text-dark-forest mb-3">9. Contact</h2>
               <p>
                 For questions about this Privacy Policy, please contact us at:{' '}
-                <a href="mailto:contact@maulanahafizali.com" className="text-subtle-gold hover:text-deep-emerald">
-                  contact@maulanahafizali.com
+                <a href="mailto:xxx" className="text-subtle-gold hover:text-deep-emerald">
+                  xxx
                 </a>
               </p>
             </div>

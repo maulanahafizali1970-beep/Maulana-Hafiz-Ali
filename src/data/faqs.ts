@@ -6,9 +6,9 @@ export const faqs: FAQ[] = [
     question: 'What type of problems can I discuss?',
     questionAr: 'ما نوع المشاكل التي يمكنني مناقشتها؟',
     answer:
-      'You can discuss a wide range of relationship and personal concerns including love and marriage difficulties, family conflicts, emotional distress, communication problems, separation concerns, trust issues, and spiritual worries. All discussions are treated with confidentiality and respect.',
+      'You can discuss a wide range of concerns including court cases and legal disputes, business obstacles, jobs and children problems, family disputes, domestic peace, buried wealth, relationship and marriage difficulties, emotional distress and spiritual worries. All discussions are treated with confidentiality and respect.',
     answerAr:
-      'يمكنك مناقشة مجموعة واسعة من المخاوف الشخصية والعلاقات بما في ذلك صعوبات الحب والزواج والصراعات العائلية والضيق العاطفي ومشاكل التواصل ومخاوف الانفصال وقضايا الثقة والمخاوف الروحية. جميع المناقشات تعامل بسرية واحترام.',
+      'يمكنك مناقشة مجموعة واسعة من المخاوف بما في ذلك قضايا المحاكم والنزاعات القانونية وعوائق الأعمال ومشاكل الوظائف والأبناء والنزاعات العائلية والسلام المنزلي والكنوز المدفونة وصعوبات العلاقات والزواج والضيق العاطفي والمخاوف الروحية. جميع المناقشات تعامل بسرية واحترام.',
   },
   {
     id: 'confidential',
@@ -56,13 +56,13 @@ export const faqs: FAQ[] = [
       'نعم، الإرشاد الزواجي والعائلي هو أحد خدماتنا الأساسية. سواء كنت تواجه خلافات أو صعوبات في التواصل أو معارضة عائلية للزواج أو تحديات في علاقتك، فإن الإرشاد متاح لمساعدتك على التفكير في وضعك بوضوح.',
   },
   {
-    id: 'book-whatsapp',
-    question: 'How can I book a WhatsApp consultation?',
-    questionAr: 'كيف يمكنني حجز استشارة عبر واتساب؟',
+    id: 'book-consultation',
+    question: 'How can I book a consultation?',
+    questionAr: 'كيف يمكنني حجز استشارة؟',
     answer:
-      'You can click the WhatsApp button anywhere on the website to send a direct message. Alternatively, you can fill out the consultation form and mention your preferred contact method. A response will be provided during consultation hours.',
+      'Simply fill out the contact details form anywhere on the website. Your details will be received and you will be contacted over a phone call to discuss your problem and guide you toward the right solution.',
     answerAr:
-      'يمكنك النقر على زر واتساب في أي مكان على الموقع لإرسال رسالة مباشرة. بدلاً من ذلك، يمكنك ملء نموذج الاستشارة وذكر طريقة الاتصال المفضلة لديك. سيتم تقديم الرد خلال ساعات الاستشارة.',
+      'ما عليك سوى ملء نموذج تفاصيل الاتصال في أي مكان على الموقع. سيتم استلام تفاصيلك وسيتم التواصل معك عبر مكالمة هاتفية لمناقشة مشكلتك وإرشادك نحو الحل المناسب.',
   },
   {
     id: 'fees-explained',

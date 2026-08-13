@@ -3,8 +3,8 @@ import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import MobileContactBar from "@/components/MobileContactBar";
+import ContactFormSection from "@/components/ContactFormSection";
+import HtmlAttrs from "@/components/HtmlAttrs";
 
 const merriweather = Merriweather({
   variable: "--font-heading",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "Maulana Hafiz Ali | Islamic Love, Marriage & Spiritual Guidance",
   description:
     "Receive confidential Islamic spiritual and relationship guidance from Maulana Hafiz Ali for love, marriage, family, separation and emotional concerns. Arabic and English online consultation available.",
-  metadataBase: new URL("https://www.maulanahafizali.com"),
+  metadataBase: new URL("https://maulana-hafiz-ali.vercel.app"),
   openGraph: {
     title: "Maulana Hafiz Ali | Islamic Love, Marriage & Spiritual Guidance",
     description:
@@ -49,21 +49,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      dir="ltr"
-      className={`${merriweather.variable} ${openSans.variable} h-full`}
-    >
-      <head>
-        <link rel="canonical" href="https://www.maulanahafizali.com" />
-        <meta name="theme-color" content="#0B5D3B" />
-      </head>
+      <html
+        className={`${merriweather.variable} ${openSans.variable} h-full`}
+      >
+        <head>
+          <meta name="theme-color" content="#0B5D3B" />
+        </head>
       <body className="min-h-full flex flex-col bg-warm-ivory text-dark-text font-body antialiased">
-        <Header lang="en" dir="ltr" />
+        <HtmlAttrs />
+        <Header />
         <main className="flex-1">{children}</main>
-        <Footer lang="en" />
-        <WhatsAppButton />
-        <MobileContactBar lang="en" />
+        <ContactFormSection />
+        <Footer />
 
         <script
           type="application/ld+json"
@@ -74,7 +71,7 @@ export default function RootLayout({
               name: "Maulana Hafiz Ali",
               description:
                 "Islamic Spiritual Guide providing confidential relationship and spiritual guidance.",
-              url: "https://www.maulanahafizali.com",
+              url: "https://maulana-hafiz-ali.vercel.app",
               knowsAbout: [
                 "Islamic spiritual guidance",
                 "Relationship counseling",

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface AboutSectionProps {
@@ -37,10 +38,14 @@ export default function AboutSection({ heading, content, points, lang = 'en' }: 
         </Link>
       </div>
       <div className={`${isArabic ? 'md:order-1' : ''}`}>
-        <div className="aspect-[3/4] rounded-2xl bg-gradient-to-br from-deep-emerald via-medium-green to-dark-forest flex items-center justify-center p-6 shadow-lg">
-          <p className="text-white/80 text-center text-lg font-medium leading-relaxed">
-            {isArabic ? 'صورة شخصية للمولانا حافظ علي' : 'Portrait of Maulana Hafiz Ali'}
-          </p>
+        <div className="w-72 h-72 mx-auto rounded-full overflow-hidden border-4 border-subtle-gold/30 shadow-lg bg-gradient-to-br from-deep-emerald via-medium-green to-dark-forest">
+          <Image
+            src="/images/maulana.png"
+            alt="Maulana Hafiz Ali"
+            width={400}
+            height={400}
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Clock } from 'lucide-react';
 
@@ -11,11 +12,22 @@ interface BlogCardProps {
   readTime: string;
 }
 
-export default function BlogCard({ title, slug, excerpt, category, date, readTime }: BlogCardProps) {
+export default function BlogCard({ title, slug, excerpt, category, image, date, readTime }: BlogCardProps) {
   return (
     <article className="border border-light-border rounded-xl bg-warm-ivory shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
       <div className="h-44 bg-gradient-to-br from-deep-emerald via-medium-green to-dark-forest relative">
-        <span className="absolute top-3 left-3 bg-subtle-gold text-white text-xs font-semibold px-3 py-1 rounded-full">
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-deep-emerald via-medium-green to-dark-forest" />
+        )}
+        <span className="absolute top-3 left-3 bg-subtle-gold text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
           {category}
         </span>
       </div>

@@ -115,8 +115,8 @@ export default function TermsConditionsPage() {
               <h2 className="text-xl font-bold text-dark-forest mb-3">9. Contact</h2>
               <p>
                 For questions about these Terms and Conditions, please contact us at:{' '}
-                <a href="mailto:contact@maulanahafizali.com" className="text-subtle-gold hover:text-deep-emerald">
-                  contact@maulanahafizali.com
+                <a href="mailto:xxx" className="text-subtle-gold hover:text-deep-emerald">
+                  xxx
                 </a>
               </p>
             </div>

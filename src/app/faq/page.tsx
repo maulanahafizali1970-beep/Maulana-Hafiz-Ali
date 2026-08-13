@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import { faqs } from '@/data/faqs';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -54,20 +54,18 @@ export default function FAQPage() {
               We are here to help.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="#contact-form"
                 className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Ask on WhatsApp
-              </a>
-              <a
-                href="mailto:contact@maulanahafizali.com"
+                Submit Your Details
+              </Link>
+              <Link
+                href="/services"
                 className="inline-flex items-center gap-2 border-2 border-deep-emerald text-deep-emerald hover:bg-deep-emerald hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
               >
-                Send an Email
-              </a>
+                View All Services
+              </Link>
             </div>
           </div>
         </div>

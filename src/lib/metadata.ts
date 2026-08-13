@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-const siteUrl = 'https://www.maulanahafizali.com';
+const siteUrl = 'https://maulana-hafiz-ali.vercel.app';
 const siteName = 'Maulana Hafiz Ali | Islamic Love, Marriage & Spiritual Guidance';
 const defaultDescription =
   'Receive confidential Islamic spiritual and relationship guidance from Maulana Hafiz Ali for love, marriage, family, separation and emotional concerns. Arabic and English online consultation available.';

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MessageCircle, Phone, ArrowLeft } from 'lucide-react';
+import { PhoneCall, ArrowLeft } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import { services } from '@/data/services';
-import { getWhatsAppUrl, getServiceMessage } from '@/lib/whatsapp';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -35,8 +34,6 @@ export default async function ServiceDetailPage({ params }: Props) {
     notFound();
   }
 
-  const whatsappUrl = getWhatsAppUrl(getServiceMessage(service.title));
-
   return (
     <>
       <section className="bg-soft-cream border-b border-light-border">
@@ -62,6 +59,11 @@ export default async function ServiceDetailPage({ params }: Props) {
                 <ArrowLeft className="w-4 h-4" />
                 Back to Services
               </Link>
+              {service.featured && (
+                <span className="inline-block bg-subtle-gold text-dark-forest font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full">
+                  ★ Featured — Most Trusted Service
+                </span>
+              )}
               <h1 className="text-3xl md:text-4xl font-bold text-dark-forest">
                 {service.title}
               </h1>
@@ -74,21 +76,18 @@ export default async function ServiceDetailPage({ params }: Props) {
                 </div>
               )}
               <div className="flex flex-wrap gap-4 pt-4">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="#contact-form"
                   className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  Consult on WhatsApp
-                </a>
+                  <PhoneCall className="w-5 h-5" />
+                  Submit Your Details
+                </Link>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center gap-2 border-2 border-deep-emerald text-deep-emerald hover:bg-deep-emerald hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
-                  Request a Call Back
+                  View All Services
                 </Link>
               </div>
             </div>
@@ -133,7 +132,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
       <CTASection
         heading="Discuss Your Situation Privately"
-        text="Speak with Maulana Hafiz Ali about your concerns through a confidential online consultation."
+        text="Only you will get the solution to your problems over a phone call. Submit your details and be contacted from any corner of the world."
         availability="Arabic and English consultations available."
       />
     </>

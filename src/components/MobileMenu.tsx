@@ -2,9 +2,8 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { X, MessageCircle } from 'lucide-react';
+import { X } from 'lucide-react';
 import { navigation } from '@/data/navigation';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 import { cn } from '@/lib/utils';
 import enMessages from '@/messages/en.json';
 import arMessages from '@/messages/ar.json';
@@ -99,16 +98,13 @@ export default function MobileMenu({ isOpen, onClose, lang = 'en', dir = 'ltr' }
             </div>
           </div>
 
-          <a
-            href={getWhatsAppUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="#contact-form"
             onClick={onClose}
             className="flex items-center justify-center gap-2 bg-[#16794D] hover:bg-[#073D2A] text-[#FFFDF7] px-4 py-3 rounded-lg text-sm font-medium transition-colors w-full border border-[#C5A253]/30"
           >
-            <MessageCircle className="w-4 h-4" />
-            <span>{t.common?.talkPrivately as string}</span>
-          </a>
+            {t.common?.submitDetails as string}
+          </Link>
         </div>
       </div>
     </>

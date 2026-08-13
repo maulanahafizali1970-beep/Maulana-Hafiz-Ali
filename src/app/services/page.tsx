@@ -7,7 +7,7 @@ import { services } from '@/data/services';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Explore Islamic spiritual and relationship guidance services including love problems, marriage guidance, family approval, separation support and spiritual protection.',
+    'Explore Islamic spiritual guidance services including wazifa, court case solutions, vashikaran-related concerns, buried wealth, business obstacles, jobs and children problems, family disputes and more.',
 };
 
 export default function ServicesPage() {
@@ -31,8 +31,9 @@ export default function ServicesPage() {
               Guidance Services
             </h1>
             <p className="text-dark-text/70 text-lg">
-              Confidential Islamic spiritual and relationship guidance for love, marriage,
-              family and personal concerns. Every situation is treated with privacy and respect.
+              Only you will get the solution to your problems over a phone call. A problem of
+              any kind is rooted out in just three hours. Every situation is treated with privacy
+              and respect.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,6 +47,7 @@ export default function ServicesPage() {
                 iconName={service.icon}
                 image={service.image}
                 disclaimer={service.disclaimer}
+                featured={service.featured}
               />
             ))}
           </div>

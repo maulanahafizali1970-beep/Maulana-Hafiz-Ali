@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="robeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B5D3B"/>
+      <stop offset="100%" stop-color="#073D2A"/>
+    </linearGradient>
+    <linearGradient id="turbanGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFDF7"/>
+      <stop offset="100%" stop-color="#DFD7C5"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#C5A253" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#C5A253" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background glow -->
+  <ellipse cx="200" cy="250" rx="160" ry="200" fill="url(#glowGrad)"/>
+
+  <!-- Robe body -->
+  <path d="M160 180 C140 260 130 380 130 480 L270 480 C270 380 260 260 240 180 Z" fill="url(#robeGrad)"/>
+
+  <!-- Collar -->
+  <path d="M185 180 L200 220 L215 180" fill="#C5A253" opacity="0.6"/>
+
+  <!-- Neck -->
+  <rect x="190" y="155" width="20" height="30" rx="10" fill="#D4A574"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="130" rx="35" ry="40" fill="#D4A574"/>
+
+  <!-- Beard -->
+  <path d="M175 140 C175 170 185 190 200 195 C215 190 225 170 225 140" fill="#B8B8B8"/>
+  <path d="M178 145 C178 168 186 183 200 188 C214 183 222 168 222 145" fill="#A0A0A0"/>
+
+  <!-- Eyes -->
+  <ellipse cx="190" cy="125" rx="3" ry="2" fill="#2D1810"/>
+  <ellipse cx="210" cy="125" rx="3" ry="2" fill="#2D1810"/>
+
+  <!-- Eyebrows -->
+  <path d="M185 118 Q190 115 195 118" stroke="#8B7355" stroke-width="1.5" fill="none"/>
+  <path d="M205 118 Q210 115 215 118" stroke="#8B7355" stroke-width="1.5" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M197 128 Q200 135 203 128" stroke="#B8865A" stroke-width="1" fill="none"/>
+
+  <!-- Mouth -->
+  <path d="M195 145 Q200 148 205 145" stroke="#8B6914" stroke-width="1.5" fill="none"/>
+
+  <!-- Turban base -->
+  <ellipse cx="200" cy="100" rx="48" ry="18" fill="url(#turbanGrad)"/>
+
+  <!-- Turban wrap -->
+  <path d="M152 100 C150 65 165 40 200 35 C235 40 250 65 248 100" fill="url(#turbanGrad)"/>
+
+  <!-- Turban folds -->
+  <path d="M160 85 C170 80 180 82 190 85" stroke="#C0B89A" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M195 87 C205 84 215 82 225 85" stroke="#C0B89A" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M158 75 C170 70 185 72 195 75" stroke="#C0B89A" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M200 77 C215 74 228 72 240 77" stroke="#C0B89A" stroke-width="1" fill="none" opacity="0.5"/>
+
+  <!-- Turban tail -->
+  <path d="M248 100 C260 105 265 115 260 125 C255 130 248 125 250 115" fill="url(#turbanGrad)"/>
+
+  <!-- Right arm - raised in dua -->
+  <path d="M240 200 C270 180 285 140 280 110" stroke="url(#robeGrad)" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <!-- Right hand -->
+  <ellipse cx="278" cy="105" rx="10" ry="12" fill="#D4A574" transform="rotate(-20 278 105)"/>
+  <!-- Right palm open -->
+  <path d="M275 95 C278 92 282 92 284 95" stroke="#D4A574" stroke-width="1.5" fill="none"/>
+  <path d="M273 100 C276 97 280 97 283 100" stroke="#D4A574" stroke-width="1.5" fill="none"/>
+
+  <!-- Left arm - raised in dua -->
+  <path d="M160 200 C130 180 115 140 120 110" stroke="url(#robeGrad)" stroke-width="24" stroke-linecap="round" fill="none"/>
+  <!-- Left hand -->
+  <ellipse cx="122" cy="105" rx="10" ry="12" fill="#D4A574" transform="rotate(20 122 105)"/>
+
+  <!-- Glow dots -->
+  <circle cx="200" cy="30" r="2" fill="#C5A253" opacity="0.6"/>
+  <circle cx="170" cy="40" r="1.5" fill="#C5A253" opacity="0.4"/>
+  <circle cx="230" cy="40" r="1.5" fill="#C5A253" opacity="0.4"/>
+  <circle cx="150" cy="55" r="1" fill="#C5A253" opacity="0.3"/>
+  <circle cx="250" cy="55" r="1" fill="#C5A253" opacity="0.3"/>
+</svg>

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { MessageCircle, Phone, ArrowLeft } from 'lucide-react';
+import { ArrowLeft, PhoneCall } from 'lucide-react';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTASection from '@/components/CTASection';
 import { services } from '@/data/services';
-import { getWhatsAppUrl, getServiceMessage } from '@/lib/whatsapp';
 
 const allowedSlugs = services.map((s) => s.slug);
 
@@ -35,8 +34,6 @@ export default async function ServiceLandingPage({ params }: Props) {
     notFound();
   }
 
-  const whatsappUrl = getWhatsAppUrl(getServiceMessage(service.title));
-
   return (
     <>
       <section className="bg-soft-cream border-b border-light-border">
@@ -54,6 +51,11 @@ export default async function ServiceLandingPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
+              {service.featured && (
+                <span className="inline-block bg-subtle-gold text-dark-forest font-bold text-xs uppercase tracking-wider px-4 py-1.5 rounded-full">
+                  ★ Featured — Most Trusted Service
+                </span>
+              )}
               <span className="inline-block text-subtle-gold font-medium text-sm tracking-wider uppercase">
                 Islamic Guidance Service
               </span>
@@ -89,21 +91,18 @@ export default async function ServiceLandingPage({ params }: Props) {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="#contact-form"
                   className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  Consult on WhatsApp
-                </a>
+                  <PhoneCall className="w-5 h-5" />
+                  Submit Your Details
+                </Link>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center gap-2 border-2 border-deep-emerald text-deep-emerald hover:bg-deep-emerald hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
-                  Request a Call Back
+                  View All Services
                 </Link>
               </div>
             </div>
@@ -112,10 +111,10 @@ export default async function ServiceLandingPage({ params }: Props) {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white/80 p-6">
                   <div className="w-20 h-20 mx-auto rounded-full bg-white/20 flex items-center justify-center mb-4">
-                    <MessageCircle className="w-10 h-10 text-white/60" />
+                    <PhoneCall className="w-10 h-10 text-white/60" />
                   </div>
                   <p className="font-medium text-lg">{service.title}</p>
-                  <p className="text-sm text-white/60 mt-1">Confidential Islamic Guidance</p>
+                  <p className="text-sm text-white/60 mt-1">Confidential Guidance Over a Phone Call</p>
                 </div>
               </div>
             </div>
@@ -150,7 +149,7 @@ export default async function ServiceLandingPage({ params }: Props) {
 
       <CTASection
         heading="Discuss Your Situation Privately"
-        text="Speak with Maulana Hafiz Ali about your concerns through a confidential online consultation."
+        text="Only you will get the solution to your problems over a phone call. Submit your details and be contacted from any corner of the world."
         availability="Arabic and English consultations available."
       />
     </>

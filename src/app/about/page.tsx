@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MessageCircle, Phone, Shield, CheckCircle } from 'lucide-react';
+import { PhoneCall, Shield, CheckCircle } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata: Metadata = {
   title: 'About Maulana Hafiz Ali',
@@ -48,15 +47,16 @@ export default function AboutPage() {
               </h1>
               <div className="space-y-4 text-dark-text/80 leading-relaxed">
                 <p>
-                  Maulana Hafiz Ali provides confidential spiritual and relationship guidance
-                  for individuals and families facing love, marriage, family and personal-life
-                  difficulties. His approach combines faith-based support, dua guidance, emotional
-                  understanding and practical relationship advice.
+                  Maulana Hafiz Ali provides confidential spiritual guidance for every kind
+                  of personal and family difficulty — court cases, business obstacles, jobs and
+                  children problems, family disputes, domestic peace, buried wealth and relationship
+                  concerns. His approach combines faith-based support, dua and wazifa guidance,
+                  emotional understanding and practical advice.
                 </p>
                 <p>
-                  Every consultation is private and tailored to the individual. The purpose of the
-                  guidance is not to control another person or guarantee outcomes, but to help clients
-                  gain clarity, understand their circumstances and make thoughtful decisions.
+                  Only you will get the solution to your problems over a phone call. Every
+                  consultation is private and tailored to the individual, and a problem of any
+                  kind is rooted out in just three hours.
                 </p>
                 <p>
                   With experience supporting clients from diverse backgrounds across the Middle East,
@@ -82,21 +82,18 @@ export default function AboutPage() {
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                <a
-                  href={getWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="#contact-form"
                   className="inline-flex items-center gap-2 bg-deep-emerald hover:bg-dark-forest text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <MessageCircle className="w-5 h-5" />
-                  Consult on WhatsApp
-                </a>
+                  <PhoneCall className="w-5 h-5" />
+                  Submit Your Details
+                </Link>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center gap-2 border-2 border-deep-emerald text-deep-emerald hover:bg-deep-emerald hover:text-white px-6 py-3 rounded-lg font-medium transition-colors"
                 >
-                  <Phone className="w-5 h-5" />
-                  Request a Call Back
+                  View All Services
                 </Link>
               </div>
             </div>
@@ -113,16 +110,16 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  title: 'Love & Relationship Guidance',
-                  desc: 'Support for misunderstandings, communication problems, trust issues and emotional distance between partners.',
+                  title: 'Life & Personal Guidance',
+                  desc: 'Support for court cases, business obstacles, jobs and children problems, buried wealth and every kind of personal difficulty.',
                 },
                 {
-                  title: 'Marriage & Family Guidance',
-                  desc: 'Private support for husband-wife conflicts, family opposition, separation concerns and family harmony.',
+                  title: 'Family & Domestic Guidance',
+                  desc: 'Private support for family disputes, domestic peace, property and inheritance matters and household stability.',
                 },
                 {
                   title: 'Spiritual & Emotional Support',
-                  desc: 'Faith-based guidance for emotional healing, spiritual concerns and finding peace during difficult times.',
+                  desc: 'Faith-based wazifa and dua guidance for emotional healing, protection concerns and finding peace during difficult times.',
                 },
               ].map((area) => (
                 <div
@@ -148,21 +145,18 @@ export default function AboutPage() {
             and handled with respect and discretion.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="#contact-form"
               className="inline-flex items-center gap-2 bg-subtle-gold hover:bg-amber-600 text-dark-forest px-6 py-3 rounded-lg font-medium transition-colors"
             >
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp Now
-            </a>
+              <PhoneCall className="w-5 h-5" />
+              Submit Your Details
+            </Link>
             <Link
-              href="/contact"
+              href="/services"
               className="inline-flex items-center gap-2 border-2 border-warm-ivory text-warm-ivory hover:bg-warm-ivory hover:text-dark-forest px-6 py-3 rounded-lg font-medium transition-colors"
             >
-              <Phone className="w-5 h-5" />
-              Request a Call
+              View All Services
             </Link>
           </div>
         </div>

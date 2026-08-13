@@ -1,11 +1,9 @@
 {
   "site": {
     "name": "Maulana Hafiz Ali",
-    "tagline": "Islamic Spiritual & Relationship Guidance",
-    "announcement": "Confidential Islamic Spiritual and Relationship Guidance — Online Consultation Available Worldwide",
-    "phone": "+91 76782 93353",
-    "whatsapp": "+91 76782 93353",
-    "email": "contact@maulanahafizali.com",
+    "tagline": "Islamic Spiritual Guidance",
+    "announcement": "Confidential Islamic Spiritual Guidance — Solution to Any Problem Over a Phone Call",
+    "email": "xxx",
     "hours": "Available for consultation: Saturday – Thursday, 10:00 AM – 8:00 PM (GST)",
     "copyright": "© 2026 Maulana Hafiz Ali. All rights reserved."
   },
@@ -13,36 +11,32 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "loveProblems": "Love Problems",
-    "marriageGuidance": "Marriage Guidance",
     "testimonials": "Testimonials",
     "blog": "Blog",
     "contact": "Contact"
   },
   "common": {
-    "consultWhatsApp": "Consult on WhatsApp",
-    "requestCall": "Request a Call Back",
+    "submitDetails": "Submit Your Details",
+    "requestCall": "Request a Consultation",
     "readMore": "Read More",
     "learnMore": "Learn More",
     "sendMessage": "Send a Message",
-    "whatsAppNow": "WhatsApp Now",
     "submitRequest": "Submit Request",
     "privacyNote": "Your information will remain private and will only be used to respond to your consultation request.",
-    "privateConsultation": "Private Consultation • Arabic & English Support • Worldwide Availability",
+    "privateConsultation": "Private Consultation • Solution in Just Three Hours • Worldwide Availability",
     "language": "Language",
     "english": "English",
     "arabic": "العربية",
-    "talkPrivately": "Talk Privately on WhatsApp",
     "requestConsultation": "Request a Consultation"
   },
   "hero": {
-    "smallHeading": "Confidential Guidance for Difficult Relationships",
-    "mainHeading": "Islamic Spiritual Guidance for Love, Marriage and Family Problems",
-    "supportingText": "Receive respectful and confidential guidance for misunderstandings, separation, marriage difficulties, family opposition, emotional pain and spiritual concerns. Maulana Hafiz Ali provides faith-based support to help you approach your situation with patience, clarity and dignity."
+    "smallHeading": "The Solution to Your Problem Over a Phone Call",
+    "mainHeading": "Islamic Spiritual Guidance to Resolve Any Problem from Any Corner of the World",
+    "supportingText": "Court cases, business obstacles, jobs and children problems, family disputes, domestic peace, buried wealth and personal difficulties — a problem of any kind is rooted out in just three hours. Submit your details and you will be contacted for a confidential phone consultation."
   },
   "about": {
     "heading": "Meet Maulana Hafiz Ali",
-    "content": "Maulana Hafiz Ali offers confidential spiritual and relationship guidance to individuals and families experiencing difficult circumstances. His consultations focus on faith, patience, emotional understanding, respectful communication and practical steps toward reconciliation. Every situation is treated privately and individually. The purpose of the consultation is not to control another person, but to help clients understand their circumstances, seek a lawful path and make thoughtful decisions for their future.",
+    "content": "Maulana Hafiz Ali offers confidential spiritual guidance to individuals and families experiencing difficult circumstances. His consultations focus on faith, patience, emotional understanding, respectful communication and practical steps toward a solution. Every situation is treated privately and individually. Only you will get the solution to your problems over a phone call.",
     "points": [
       "Confidential one-to-one consultation",
       "Guidance available in English and Arabic",
@@ -68,13 +62,13 @@
       },
       {
         "title": "Worldwide Online Service",
-        "description": "Connect from anywhere in the world through WhatsApp, phone or online form."
+        "description": "Get work done from any corner of the world — find a solution for every problem."
       }
     ]
   },
   "services": {
-    "heading": "Guidance for Love, Marriage and Personal Problems",
-    "cta": "Consult on WhatsApp"
+    "heading": "Guidance for Every Kind of Problem",
+    "cta": "Get Your Solution"
   },
   "reconciliation": {
     "heading": "Seeking Reconciliation After a Breakup",
@@ -85,20 +79,20 @@
     "heading": "How Your Private Consultation Works",
     "steps": [
       {
-        "title": "Share Your Situation",
-        "description": "Complete the form or send a private WhatsApp message."
+        "title": "Submit Your Details",
+        "description": "Fill out the contact details form on this page."
       },
       {
         "title": "Choose Your Language",
         "description": "Select English or Arabic for your consultation."
       },
       {
-        "title": "Receive Personalized Guidance",
-        "description": "Your situation will be reviewed privately before guidance is provided."
+        "title": "Receive a Call",
+        "description": "You will be contacted over a phone call to understand your problem."
       },
       {
-        "title": "Take Practical and Spiritual Steps",
-        "description": "Follow respectful recommendations based on your circumstances."
+        "title": "Get Your Solution",
+        "description": "A problem of any kind is rooted out in just three hours."
       }
     ],
     "note": "Fees, consultation duration and service details should be explained before payment. Never request sensitive banking passwords, verification codes or unnecessary private documents."
@@ -106,31 +100,34 @@
   "problemsCovered": {
     "heading": "Problems We Help With",
     "items": [
+      "Court cases and legal disputes",
+      "Vashikaran-related concerns",
+      "Buried wealth and hidden treasure",
+      "Domestic peace and family stability",
+      "Business obstacles and growth",
+      "Jobs and career difficulties",
+      "Children problems",
+      "Freedom from enemies and protection",
+      "Family dispute resolution",
+      "Property and inheritance disputes",
       "Misunderstandings between partners",
-      "Breakup and loss of communication",
       "Husband-wife disagreements",
       "Family opposition to marriage",
-      "Trust and jealousy concerns",
-      "Emotional distance",
-      "Intercultural marriage difficulties",
-      "Delayed marriage discussions",
       "Separation and divorce concerns",
-      "One-sided attachment",
-      "Family conflict",
-      "Fear of envy or evil eye",
+      "Trust and jealousy concerns",
       "Emotional healing after rejection",
-      "Decision-making before marriage",
+      "Fear of envy or evil eye",
       "Long-distance relationship difficulties"
     ]
   },
   "whyChoose": {
     "heading": "Why People Seek Guidance from Maulana Hafiz Ali",
     "points": [
-      "Confidential and respectful communication",
-      "Guidance based on each person's circumstances",
-      "Arabic and English consultation",
-      "Convenient WhatsApp and phone support",
-      "Combination of spiritual reflection and practical advice"
+      "Only you will get the solution to your problems over a phone call",
+      "Get work done from any corner of the world",
+      "A problem of any kind is rooted out in just three hours",
+      "Disappointed from Tantriks? Try once for sure",
+      "Confidential, respectful and personalized guidance"
     ]
   },
   "countries": {
@@ -143,11 +140,11 @@
   },
   "cta": {
     "heading": "Discuss Your Situation Privately",
-    "text": "Speak with Maulana Hafiz Ali about your relationship, marriage, family or spiritual concerns through a confidential online consultation.",
+    "text": "Only you will get the solution to your problems over a phone call. Submit your details and be contacted from any corner of the world.",
     "availability": "Arabic and English consultations available."
   },
   "footer": {
-    "about": "Maulana Hafiz Ali provides confidential Islamic spiritual and relationship guidance for love, marriage, family and personal difficulties.",
+    "about": "Maulana Hafiz Ali provides confidential Islamic spiritual guidance for every kind of personal difficulty — court cases, business obstacles, jobs and children problems, family disputes and more.",
     "services": "Guidance Services",
     "links": "Useful Links",
     "contact": "Contact",
@@ -161,7 +158,6 @@
     "fullName": "Full Name",
     "email": "Email",
     "country": "Country",
-    "whatsappNumber": "WhatsApp Number",
     "phoneNumber": "Phone Number",
     "preferredLanguage": "Preferred Language",
     "typeOfProblem": "Type of Problem",
@@ -170,8 +166,8 @@
     "shortDescription": "Short Description",
     "consent": "I agree that my submitted information may be used to respond to my consultation request.",
     "submit": "Submit Request",
-    "success": "Thank you. Your consultation request has been received. Please connect through WhatsApp for a faster response.",
-    "error": "An error occurred. Please try again or contact us through WhatsApp.",
+    "success": "Thank you. Your details have been received. You will be contacted to resolve your problem over a phone call.",
+    "error": "An error occurred. Please try again.",
     "selectService": "Select a service",
     "selectLanguage": "Select language"
   }

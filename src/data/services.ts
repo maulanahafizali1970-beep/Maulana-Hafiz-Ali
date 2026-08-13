@@ -2,19 +2,20 @@ import { Service } from '@/types';
 
 export const services: Service[] = [
   {
-    id: 'love-problem-guidance',
-    slug: 'love-problem-guidance',
-    title: 'Love Problem Guidance',
-    titleAr: 'إرشاد مشاكل الحب',
+    id: 'wazifa',
+    slug: 'wazifa',
+    title: 'Wazifa',
+    titleAr: 'وظيفة',
     description:
-      'Support for misunderstandings, emotional distance, communication problems, trust issues and recurring conflicts between partners. Receive confidential guidance to help you understand your situation and find a respectful path forward.',
+      'Faith-based wazifa and dua guidance for personal difficulties, emotional distress and life challenges. Share your concern over a confidential phone consultation and receive direction that fits your situation.',
     descriptionAr:
-      'دعم لسوء الفهم والتباعد العاطفي ومشاكل التواصل وقضايا الثقة والصراعات المتكررة بين الشريكين. احصل على إرشاد سري لمساعدتك على فهم وضعك وإيجاد طريق محترم للمضي قدماً.',
+      'إرشاد قائم على الوظيفة والأدعية للمصاعب الشخصية والضيق العاطفي وتحديات الحياة. شارك مشكلتك عبر استشارة هاتفية سرية واحصل على توجيه يناسب حالتك.',
     excerpt:
-      'Support for misunderstandings, emotional distance, communication problems and trust issues between partners.',
-    excerptAr: 'دعم لسوء الفهم والتباعد العاطفي ومشاكل التواصل وقضايا الثقة بين الشريكين.',
-    icon: 'Heart',
+      'Faith-based wazifa and dua guidance for personal difficulties and life challenges.',
+    excerptAr: 'إرشاد قائم على الوظيفة والأدعية للمصاعب الشخصية وتحديات الحياة.',
+    icon: 'BookOpen',
     image: '/images/services/love-problems.jpg',
+    featured: true,
   },
   {
     id: 'lost-love-reconciliation',
@@ -22,12 +23,12 @@ export const services: Service[] = [
     title: 'Lost Love and Reconciliation',
     titleAr: 'الحب المفقود والمصالحة',
     description:
-      'Faith-based and practical guidance for those hoping to rebuild communication and seek respectful reconciliation after separation. Every situation is unique and approached with patience and understanding.',
+      'Guidance for those hoping to rebuild communication and seek respectful reconciliation after separation. Every situation is unique and approached with patience and understanding over a private phone consultation.',
     descriptionAr:
-      'إرشاد عملي قائم على الإيمان لأولئك الذين يأملون في إعادة بناء التواصل والسعي للمصالحة المحترمة بعد الانفصال. كل حالة فريدة ويتم التعامل معها بصبر وتفهم.',
+      'إرشاد لأولئك الذين يأملون في إعادة بناء التواصل والسعي للمصالحة المحترمة بعد الانفصال. كل حالة فريدة ويتم التعامل معها بصبر وتفهم عبر استشارة هاتفية خاصة.',
     excerpt:
-      'Faith-based guidance for those hoping to rebuild communication and seek reconciliation after separation.',
-    excerptAr: 'إرشاد قائم على الإيمان لأولئك الذين يأملون في إعادة بناء التواصل والسعي للمصالحة بعد الانفصال.',
+      'Guidance for those hoping to rebuild communication and seek reconciliation after separation.',
+    excerptAr: 'إرشاد لأولئك الذين يأملون في إعادة بناء التواصل والسعي للمصالحة بعد الانفصال.',
     icon: 'HeartHandshake',
     image: '/images/services/lost-love.jpg',
   },
@@ -97,12 +98,12 @@ export const services: Service[] = [
     title: 'Evil Eye and Spiritual Protection',
     titleAr: 'العين والحماية الروحية',
     description:
-      'General faith-based guidance for prayer, self-reflection and ethical spiritual protection for those concerned about envy or negative influences. This is not a replacement for medical or psychological care.',
+      'Guidance for prayer, self-reflection and ethical spiritual protection for those concerned about envy or negative influences. This is not a replacement for medical or psychological care.',
     descriptionAr:
-      'إرشاد عام قائم على الإيمان للصلاة والتأمل الذاتي والحماية الروحية الأخلاقية لمن يشعرون بالقلق من الحسد أو التأثيرات السلبية. هذا ليس بديلاً عن الرعاية الطبية أو النفسية.',
+      'إرشاد للصلاة والتأمل الذاتي والحماية الروحية الأخلاقية لمن يشعرون بالقلق من الحسد أو التأثيرات السلبية. هذا ليس بديلاً عن الرعاية الطبية أو النفسية.',
     excerpt:
-      'Faith-based guidance for prayer, self-reflection and spiritual protection from envy or negative influences.',
-    excerptAr: 'إرشاد قائم على الإيمان للصلاة والتأمل الذاتي والحماية الروحية من الحسد أو التأثيرات السلبية.',
+      'Guidance for prayer, self-reflection and spiritual protection from envy or negative influences.',
+    excerptAr: 'إرشاد للصلاة والتأمل الذاتي والحماية الروحية من الحسد أو التأثيرات السلبية.',
     icon: 'Shield',
     image: '/images/services/spiritual-protection.jpg',
     isSpecial: true,
@@ -124,6 +125,127 @@ export const services: Service[] = [
       'Support for family disagreements, communication breakdowns, misunderstandings and household tension.',
     excerptAr: 'دعم للخلافات العائلية وانهيار التواصل وسوء الفهم والتوتر الأسري.',
     icon: 'Shield',
+    image: '/images/services/family-harmony.jpg',
+  },
+  {
+    id: 'court-case-solutions',
+    slug: 'court-case-solutions',
+    title: 'Court Case and Legal Dispute Solutions',
+    titleAr: 'حلول القضايا القانونية والنزاعات',
+    description:
+      'Spiritual support and guidance for those facing court cases, legal disputes and case-related stress. Share the details of your matter over a confidential phone consultation and receive guidance suited to your situation.',
+    descriptionAr:
+      'دعم روحي وإرشاد لمن يواجهون قضايا المحاكم والنزاعات القانونية والضغط المرتبط بالقضايا. شارك تفاصيل قضيتك عبر استشارة هاتفية سرية واحصل على إرشاد يناسب حالتك.',
+    excerpt:
+      'Spiritual support for those facing court cases, legal disputes and case-related stress.',
+    excerptAr: 'دعم روحي لمن يواجهون قضايا المحاكم والنزاعات القانونية والضغط المرتبط بالقضايا.',
+    icon: 'Scale',
+    image: '/images/services/family-harmony.jpg',
+  },
+  {
+    id: 'vashikaran',
+    slug: 'vashikaran',
+    title: 'Vashikaran',
+    titleAr: 'فاشيكران',
+    description:
+      'Share your concern over a confidential phone consultation. Only you will get the solution to your problems over a phone call, from any corner of the world. Submit your details and our team will guide you to the right service for your situation.',
+    descriptionAr:
+      'شارك مشكلتك عبر استشارة هاتفية سرية. فقط أنت ستحصل على حل مشاكلك عبر مكالمة هاتفية من أي مكان في العالم. أرسل بياناتك وسيرشدك فريقنا إلى الخدمة المناسبة لحالتك.',
+    excerpt:
+      'Share your concern over a confidential phone consultation from anywhere in the world.',
+    excerptAr: 'شارك مشكلتك عبر استشارة هاتفية سرية من أي مكان في العالم.',
+    icon: 'Sparkles',
+    image: '/images/services/spiritual-protection.jpg',
+    isSpecial: true,
+  },
+  {
+    id: 'buried-wealth',
+    slug: 'buried-wealth',
+    title: 'Buried Wealth and Hidden Treasure',
+    titleAr: 'الكنوز المدفونة والثروات المخفية',
+    description:
+      'Guidance for concerns related to hidden wealth, treasure, property and financial matters. Discuss your situation in full confidence over a private phone consultation and receive guidance for your circumstances.',
+    descriptionAr:
+      'إرشاد للمخاوف المتعلقة بالثروات المخفية والكنوز والممتلكات والمسائل المالية. ناقش وضعك بثقة تامة عبر استشارة هاتفية خاصة واحصل على إرشاد يناسب ظروفك.',
+    excerpt:
+      'Guidance for concerns related to hidden wealth, treasure, property and financial matters.',
+    excerptAr: 'إرشاد للمخاوف المتعلقة بالثروات المخفية والكنوز والممتلكات والمسائل المالية.',
+    icon: 'Coins',
+    image: '/images/services/marriage-approval.jpg',
+  },
+  {
+    id: 'domestic-peace',
+    slug: 'domestic-peace',
+    title: 'Domestic Peace and Family Stability',
+    titleAr: 'السلام المنزلي واستقرار الأسرة',
+    description:
+      'Support for restoring peace, stability and harmony within the home. Whether the issue involves constant arguments, restlessness or a lack of calm, guidance is available through a confidential consultation.',
+    descriptionAr:
+      'دعم لاستعادة السلام والاستقرار والتناغم داخل المنزل. سواء كانت المشكلة تتعلق بالخلافات المستمرة أو القلق أو غياب الهدوء، فإن الإرشاد متاح عبر استشارة سرية.',
+    excerpt:
+      'Support for restoring peace, stability and harmony within the home.',
+    excerptAr: 'دعم لاستعادة السلام والاستقرار والتناغم داخل المنزل.',
+    icon: 'Home',
+    image: '/images/services/family-harmony.jpg',
+  },
+  {
+    id: 'business-obstacles',
+    slug: 'business-obstacles',
+    title: 'Business Obstacles and Growth',
+    titleAr: 'عوائق الأعمال والنمو',
+    description:
+      'Guidance for business owners and professionals facing obstacles, stagnation, competition or unexpected difficulties. Discuss your situation privately and receive guidance over a confidential phone consultation.',
+    descriptionAr:
+      'إرشاد لأصحاب الأعمال والمهنيين الذين يواجهون عوائق أو ركوداً أو منافسة أو صعوبات غير متوقعة. ناقش وضعك بشكل خاص واحصل على إرشاد عبر استشارة هاتفية سرية.',
+    excerpt:
+      'Guidance for business owners facing obstacles, stagnation, competition or unexpected difficulties.',
+    excerptAr: 'إرشاد لأصحاب الأعمال الذين يواجهون عوائق أو ركوداً أو منافسة أو صعوبات غير متوقعة.',
+    icon: 'Briefcase',
+    image: '/images/services/love-problems.jpg',
+  },
+  {
+    id: 'jobs-child-problems',
+    slug: 'jobs-child-problems',
+    title: 'Jobs and Children Problems',
+    titleAr: 'مشاكل العمل والأبناء',
+    description:
+      'Support for employment concerns, career difficulties and worries related to children, their behaviour, studies or future. Share your situation over a confidential phone consultation and receive personal guidance.',
+    descriptionAr:
+      'دعم للمخاوف الوظيفية وصعوبات المسار المهني والقلق المتعلق بالأبناء وسلوكهم ودراستهم ومستقبلهم. شارك وضعك عبر استشارة هاتفية سرية واحصل على إرشاد شخصي.',
+    excerpt:
+      'Support for employment concerns, career difficulties and worries related to children.',
+    excerptAr: 'دعم للمخاوف الوظيفية وصعوبات المسار المهني والقلق المتعلق بالأبناء.',
+    icon: 'Briefcase',
+    image: '/images/services/husband-wife.jpg',
+  },
+  {
+    id: 'freedom-from-enemies',
+    slug: 'freedom-from-enemies',
+    title: 'Freedom from Enemies and Protection',
+    titleAr: 'التخلص من الأعداء والحماية',
+    description:
+      'Guidance for those feeling targeted by enemies, rivals or negative influences. Receive confidential support and protection guidance over a private phone consultation from anywhere in the world.',
+    descriptionAr:
+      'إرشاد لمن يشعرون بأنهم مستهدفون من الأعداء أو المنافسين أو التأثيرات السلبية. احصل على دعم سري وإرشاد للحماية عبر استشارة هاتفية خاصة من أي مكان في العالم.',
+    excerpt:
+      'Guidance for those feeling targeted by enemies, rivals or negative influences.',
+    excerptAr: 'إرشاد لمن يشعرون بأنهم مستهدفون من الأعداء أو المنافسين أو التأثيرات السلبية.',
+    icon: 'ShieldAlert',
+    image: '/images/services/spiritual-protection.jpg',
+  },
+  {
+    id: 'family-dispute-resolution',
+    slug: 'family-dispute-resolution',
+    title: 'Family Dispute Resolution',
+    titleAr: 'حل النزاعات العائلية',
+    description:
+      'Support for property disputes, inheritance matters, sibling conflicts and long-standing family disagreements. Guidance focuses on finding a calm, respectful way forward through a confidential consultation.',
+    descriptionAr:
+      'دعم للنزاعات المتعلقة بالممتلكات والميراث والصراعات بين الأشقاء والخلافات العائلية الطويلة. يركز الإرشاد على إيجاد طريق هادئ ومحترم للمضي قدماً عبر استشارة سرية.',
+    excerpt:
+      'Support for property disputes, inheritance matters, sibling conflicts and family disagreements.',
+    excerptAr: 'دعم للنزاعات المتعلقة بالممتلكات والميراث والصراعات بين الأشقاء والخلافات العائلية.',
+    icon: 'Users',
     image: '/images/services/family-harmony.jpg',
   },
 ];

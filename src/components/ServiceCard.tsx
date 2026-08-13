@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Heart, HeartHandshake, Users, Home, HeartOff, Shield, MessageCircle } from 'lucide-react';
-import { getWhatsAppUrl, getServiceMessage } from '@/lib/whatsapp';
+import { Heart, HeartHandshake, Users, Home, HeartOff, Shield, BookOpen, Scale, Sparkles, Coins, Briefcase, ShieldAlert } from 'lucide-react';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart: Heart,
@@ -10,6 +9,12 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Home: Home,
   HeartOff: HeartOff,
   Shield: Shield,
+  BookOpen: BookOpen,
+  Scale: Scale,
+  Sparkles: Sparkles,
+  Coins: Coins,
+  Briefcase: Briefcase,
+  ShieldAlert: ShieldAlert,
 };
 
 interface ServiceCardProps {
@@ -21,14 +26,19 @@ interface ServiceCardProps {
   imageAlt?: string;
   excerpt?: string;
   disclaimer?: string;
+  featured?: boolean;
 }
 
-export default function ServiceCard({ title, description, slug, iconName, image, imageAlt, excerpt, disclaimer }: ServiceCardProps) {
+export default function ServiceCard({ title, description, slug, iconName, image, imageAlt, excerpt, disclaimer, featured }: ServiceCardProps) {
   const Icon = iconMap[iconName] || Heart;
-  const whatsappUrl = getWhatsAppUrl(getServiceMessage(title));
 
   return (
-    <div className="border border-subtle-gold/30 rounded-xl bg-warm-ivory shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
+    <div className={`relative border rounded-xl bg-warm-ivory shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col ${featured ? 'border-subtle-gold border-2 shadow-lg' : 'border-subtle-gold/30'}`}>
+      {featured && (
+        <div className="absolute top-3 left-3 z-10 bg-subtle-gold text-dark-forest text-xs font-bold px-3 py-1 rounded-full shadow">
+          ★ Featured — Wazifa
+        </div>
+      )}
       <div className="h-40 relative overflow-hidden bg-gradient-to-br from-deep-emerald via-medium-green to-dark-forest">
         {image ? (
           <Image
@@ -62,15 +72,12 @@ export default function ServiceCard({ title, description, slug, iconName, image,
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="#contact-form"
             className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-deep-emerald text-white rounded-lg hover:bg-dark-forest transition-colors text-sm font-medium"
           >
-            <MessageCircle className="w-4 h-4" />
-            Consultation on WhatsApp
-          </a>
+            Get Your Solution
+          </Link>
           {disclaimer && (
             <p className="text-xs text-dark-text/50 italic mt-2">{disclaimer}</p>
           )}

@@ -1,15 +1,15 @@
+'use client';
+
 import Link from 'next/link';
-import { Phone, MessageCircle, Mail, Globe, Camera, Play } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Mail } from 'lucide-react';
 import { footerServices, footerLinks } from '@/data/navigation';
-import { getWhatsAppUrl } from '@/lib/whatsapp';
 import enMessages from '@/messages/en.json';
 import arMessages from '@/messages/ar.json';
 
-interface FooterProps {
-  lang?: 'en' | 'ar';
-}
-
-export default function Footer({ lang = 'en' }: FooterProps) {
+export default function Footer() {
+  const pathname = usePathname();
+  const lang = pathname.startsWith('/ar') ? 'ar' : 'en';
   const t = lang === 'ar' ? arMessages : enMessages;
   const site = t.site;
   const footer = t.footer;
@@ -59,22 +59,6 @@ export default function Footer({ lang = 'en' }: FooterProps) {
             <h3 className="text-[#C5A253] font-bold text-lg mb-4">{footer.contact as string}</h3>
             <div className="space-y-3 text-sm">
               <a
-                href={`tel:${site.phone}`}
-                className="flex items-center gap-2 text-[#DFD7C5] hover:text-[#C5A253] transition-colors"
-              >
-                <Phone className="w-4 h-4 text-[#C5A253]" />
-                {site.phone as string}
-              </a>
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-[#DFD7C5] hover:text-[#C5A253] transition-colors"
-              >
-                <MessageCircle className="w-4 h-4 text-[#C5A253]" />
-                {site.whatsapp as string}
-              </a>
-              <a
                 href={`mailto:${site.email}`}
                 className="flex items-center gap-2 text-[#DFD7C5] hover:text-[#C5A253] transition-colors"
               >
@@ -84,27 +68,12 @@ export default function Footer({ lang = 'en' }: FooterProps) {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-[#C5A253] text-sm font-medium mb-3">{footer.followUs as string}</h4>
-              <div className="flex items-center gap-3">
-                <a href="#" className="text-[#DFD7C5] hover:text-[#C5A253] transition-colors" aria-label="Facebook">
-                  <Globe className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-[#DFD7C5] hover:text-[#C5A253] transition-colors" aria-label="Instagram">
-                  <Camera className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-[#DFD7C5] hover:text-[#C5A253] transition-colors" aria-label="YouTube">
-                  <Play className="w-5 h-5" />
-                </a>
-                <a
-                  href={getWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#DFD7C5] hover:text-[#C5A253] transition-colors"
-                  aria-label="WhatsApp"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </a>
-              </div>
+              <Link
+                href="#contact-form"
+                className="inline-flex items-center justify-center gap-2 bg-[#16794D] hover:bg-[#0B5D3B] text-[#FFFDF7] px-5 py-2.5 rounded-lg text-sm font-medium transition-colors border border-[#C5A253]/30"
+              >
+                {t.common?.submitDetails as string}
+              </Link>
             </div>
           </div>
         </div>

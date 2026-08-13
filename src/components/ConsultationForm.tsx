@@ -3,13 +3,19 @@
 import { useState, type FormEvent } from 'react';
 
 const SERVICE_OPTIONS = [
+  'Wazifa',
+  'Vashikaran',
+  'Court Case & Legal Dispute Solutions',
+  'Buried Wealth & Hidden Treasure',
+  'Domestic Peace & Family Stability',
+  'Business Obstacles & Growth',
+  'Jobs & Children Problems',
+  'Freedom from Enemies & Protection',
+  'Family Dispute Resolution',
   'Love & Relationship Guidance',
   'Marriage Counseling',
-  'Family Dispute Resolution',
+  'Family Harmony',
   'Spiritual Healing (Rohani Ilaj)',
-  'Divorce & Separation Support',
-  'Personal Spiritual Guidance',
-  'Islamic Education & Knowledge',
   'Other',
 ] as const;
 
@@ -19,7 +25,7 @@ interface FormData {
   fullName: string;
   email: string;
   country: string;
-  whatsapp: string;
+  phone: string;
   language: string;
   service: string;
   message: string;
@@ -30,7 +36,7 @@ interface FormErrors {
   fullName?: string;
   email?: string;
   country?: string;
-  whatsapp?: string;
+  phone?: string;
   language?: string;
   service?: string;
   message?: string;
@@ -47,14 +53,14 @@ const EN: Labels = {
   fullName: 'Full Name',
   email: 'Email Address',
   country: 'Country',
-  whatsapp: 'WhatsApp Number',
+  phone: 'Phone Number',
   language: 'Preferred Language',
   service: 'Service Required',
   message: 'Your Message',
   consent: 'I consent to being contacted regarding my consultation request.',
   submit: 'Submit Request',
   submitting: 'Submitting...',
-  success: 'Thank you. Your consultation request has been received. Please connect through WhatsApp for a faster response.',
+  success: 'Thank you. Your details have been received. You will be contacted to resolve your problem over a phone call.',
   error: 'Something went wrong. Please try again.',
   privacy: 'Your information is kept confidential and will only be used to respond to your consultation request.',
   required: 'This field is required',
@@ -69,14 +75,14 @@ const AR: Labels = {
   fullName: 'الاسم الكامل',
   email: 'البريد الإلكتروني',
   country: 'الدولة',
-  whatsapp: 'رقم الواتساب',
+  phone: 'رقم الهاتف',
   language: 'اللغة المفضلة',
   service: 'الخدمة المطلوبة',
   message: 'رسالتك',
   consent: 'أوافق على التواصل معي بخصوص طلب الاستشارة الخاص بي.',
   submit: 'إرسال الطلب',
   submitting: 'جارٍ الإرسال...',
-  success: 'شكراً لك. تم استلام طلب الاستشارة الخاص بك. يرجى التواصل عبر الواتساب للحصول على رد أسرع.',
+  success: 'شكراً لك. تم استلام تفاصيلك. سيتم التواصل معك لحل مشكلتك عبر مكالمة هاتفية.',
   error: 'حدث خطأ ما. يرجى المحاولة مرة أخرى.',
   privacy: 'معلوماتك سرية ولن تُستخدم إلا للرد على طلب الاستشارة الخاص بك.',
   required: 'هذا الحقل مطلوب',
@@ -96,7 +102,7 @@ function validate(data: FormData, labels: Labels): FormErrors {
     errors.email = labels.emailInvalid;
   }
   if (!data.country.trim()) errors.country = labels.required;
-  if (!data.whatsapp.trim()) errors.whatsapp = labels.required;
+  if (!data.phone.trim()) errors.phone = labels.required;
   if (!data.language) errors.language = labels.required;
   if (!data.service) errors.service = labels.required;
   if (!data.message.trim()) errors.message = labels.required;
@@ -112,7 +118,7 @@ export default function ConsultationForm({ lang = 'en' }: ConsultationFormProps)
     fullName: '',
     email: '',
     country: '',
-    whatsapp: '',
+    phone: '',
     language: '',
     service: '',
     message: '',
@@ -133,7 +139,7 @@ export default function ConsultationForm({ lang = 'en' }: ConsultationFormProps)
     }
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     const validationErrors = validate(formData, labels);
     if (Object.keys(validationErrors).length > 0) {
@@ -141,9 +147,20 @@ export default function ConsultationForm({ lang = 'en' }: ConsultationFormProps)
       return;
     }
     setStatus('loading');
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        setStatus('error');
+        return;
+      }
       setStatus('success');
-    }, 1500);
+    } catch {
+      setStatus('error');
+    }
   }
 
   function inputClass(field: keyof FormErrors) {
@@ -232,23 +249,23 @@ export default function ConsultationForm({ lang = 'en' }: ConsultationFormProps)
         </div>
 
         <div className="space-y-1.5">
-          <label htmlFor="whatsapp" className="text-sm font-medium text-dark-text">
-            {labels.whatsapp} <span className="text-red-500">*</span>
+          <label htmlFor="phone" className="text-sm font-medium text-dark-text">
+            {labels.phone} <span className="text-red-500">*</span>
           </label>
           <input
-            id="whatsapp"
+            id="phone"
             type="tel"
-            value={formData.whatsapp}
-            onChange={(e) => handleChange('whatsapp', e.target.value)}
+            value={formData.phone}
+            onChange={(e) => handleChange('phone', e.target.value)}
             placeholder="e.g. +971 50 123 4567"
-            className={inputClass('whatsapp')}
+            className={inputClass('phone')}
             dir={isArabic ? 'rtl' : 'ltr'}
             aria-required="true"
-            aria-invalid={!!errors.whatsapp}
-            aria-describedby={errors.whatsapp ? 'whatsapp-error' : undefined}
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? 'phone-error' : undefined}
           />
-          {errors.whatsapp && (
-            <p id="whatsapp-error" role="alert" className="text-xs text-red-500">{errors.whatsapp}</p>
+          {errors.phone && (
+            <p id="phone-error" role="alert" className="text-xs text-red-500">{errors.phone}</p>
           )}
         </div>
 
