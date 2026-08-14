@@ -70,24 +70,7 @@ export default function RootLayout({
           }}
         />
         <TawkWidget />
-        <Script
-  id="hitsteps"
-  strategy="afterInteractive"
->
-  {`
-    (function(){
-      var hstc = document.createElement('script');
-      hstc.src = 'https://edgecdnplus.com/code?code=d1e9b897ca7d03a79d8c8bdefda4c53a';
-      hstc.async = true;
-
-      var htssc = document.getElementsByTagName('script')[0];
-
-      if (htssc && htssc.parentNode) {
-        htssc.parentNode.insertBefore(hstc, htssc);
-      }
-    })();
-  `}
-/>
+ 
       </body>
     </html>
   );
